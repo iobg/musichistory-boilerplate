@@ -1,0 +1,26 @@
+.top {border:2px solid black;
+	padding:10px;
+	background:#FFB4B0;
+	width:795px;
+	height: 50px;
+	margin :10px;}
+.left { border: 2px solid black;
+	padding:10px;
+	background:#4DD7FA; 
+	float:left;
+	width:150px;
+	height:400px;
+	margin: 10px;
+	padding-bottom:10px;}
+.buttons{text-align:left;}
+
+.right{background:#FEFAC0;
+	padding:10px;
+	border:2px solid black;
+	width:600px;
+	height:400px;
+	margin:10px;
+	float:left;
+}
+.right h1 {color:#785616;}
+body{ margin:; 10px; }

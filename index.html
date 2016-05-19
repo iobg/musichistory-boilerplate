@@ -16,7 +16,7 @@
 
 	<div class="left">
 		<p>Song Length:</p>
-		<input type="range" min="0" max="100" value="50">
+		<input type="range" min="0" max="100" value="50" class="range">
 		<p>Artist:</p>
 		<select>
 			<option>Options</option>
@@ -29,20 +29,20 @@
 		</select>
 		<p>Genre:</p>
 		<div class="buttons">
-		<p>
-		<input type="checkbox" name="genre" value="Rock"> Rock
-		<input type="checkbox" name="genre" value="Pop"> Pop
-		</p>
-		<p>
-		<input type="checkbox" name="genre" value="Blues"> Blues
-		<input type="checkbox" name="genre" value="Classical"> Classical
-		</p>
-		<p>
-		<input type="checkbox" name="genre" value="Jazz"> Jazz
-		<input type="checkbox" name="genre" value="Hip Hop"> Hip hop
-		</p>
+		<ul>
+			<li><input type="checkbox" name="genre" value="Rock"> Rock</li>
+			<li><input type="checkbox" name="genre" value="Pop"> Pop</li>
+			<li><input type="checkbox" name="genre" value="Blues"> Blues</li>
+		</ul>
+		<ul>
+			<li><input type="checkbox" name="genre" value="Classical"> Classical</li>
+			<li><input type="checkbox" name="genre" value="Jazz"> Jazz</li>
+			<li><input type="checkbox" name="genre" value="Hip Hop"> Hip hop</li>
+		</ul>
+		
+
 		</div>
-		<input type="button" value="Filter">
+		<input type="button" value="Filter" class="filter">
 	</div>
 
 	<div class="right">

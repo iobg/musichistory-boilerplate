@@ -11,10 +11,10 @@
 <body>
 
 	<div class="top">
-		<nav> View Music | <a href="">Add Music</a> | <a href="">Profile</nav></a>
+		<nav><a id="addview">Add Music</a> | <a id="listview">List Music</a></nav> 
 
 	</div>
-
+	<div id ="list">
 	<div class="left">
 		<p>Song Length:</p>
 		<input type="range" min="0" max="100" value="50" class="range">
@@ -49,6 +49,18 @@
 	<div class="right" id="right">
 		
 
+	</div>
+	</div>
+
+	<div class ="hidden" id="add">
+	<div class="addForm">
+	<ul>
+	<li>Song name:<input type="text" id="song" placeholder="Song name"></li>
+	<li>Artist name:<input type="text" id="artist" placeholder="Artist"></li>
+	<li>Album name:<input type="text" id="album" placeholder="Album"></li>
+	<li><input type="button" value="Add" id="addbutton"></li>
+	</ul>
+	</div>
 	</div>
 
 

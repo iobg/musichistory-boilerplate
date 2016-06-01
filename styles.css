@@ -12,7 +12,11 @@
 	height:400px;
 	margin: 10px;
 	padding-bottom:10px;}
-.flexbox {display:flex;}
+
+.visible 
+	{display:flex;}
+.hidden{
+	display:none;}
 
 .right{background:#FEFAC0;
 	padding:10px;
@@ -33,6 +37,10 @@
 }
 .right h1 {color:#785616;}
 body{ margin:10px; }
+.addForm li{	display:block;
+				padding:5px;}
+.addForm {		margin-left:30%;}
+.addForm li input{display:inline-block}
 
 .buttons ul{list-style-type:none;
 		display:inline-block;

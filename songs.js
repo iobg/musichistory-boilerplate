@@ -14,7 +14,7 @@ song = song.replace("*", "");
 song = song.replace("@", "");
 song = song.replace("(", "");
 song = song.replace("!", "");
-document.getElementById('right').innerHTML += song;
+document.getElementById('right').innerHTML += "<div class='song'>"+song+"</div>";
 console.log(song);
 });
 

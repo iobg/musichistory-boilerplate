@@ -12,7 +12,7 @@
 	height:400px;
 	margin: 10px;
 	padding-bottom:10px;}
-
+.flexbox {display:flex;}
 
 .right{background:#FEFAC0;
 	padding:10px;
@@ -21,6 +21,15 @@
 	height:400px;
 	margin:10px;
 	float:left;
+}
+.right div:nth-child(even){
+	background:#FFF5EE;
+}
+.right div:nth-child(odd){
+	background:#F5FFFA;
+}
+.right div:first-child{
+	font-weight:bold;
 }
 .right h1 {color:#785616;}
 body{ margin:10px; }

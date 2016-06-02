@@ -9,30 +9,40 @@
 	background:#4DD7FA; 
 	float:left;
 	width:250px;
-	height:400px;
 	margin: 10px;
 	padding-bottom:10px;}
 
 .visible 
 	{display:flex;}
+#list{
+		word-wrap:normal;
+		}
 .hidden{
 	display:none;}
+nav a:hover{color:gray;
+			font-size:larger;}
+nav a 	{
+		
+		margin-left:20%;
+		display:inline-block;}
+nav 	{position:absolute;
+		width:895px;
+		height:50px;}
 
 .right{background:#FEFAC0;
 	padding:10px;
 	border:2px solid black;
 	width:600px;
-	height:400px;
 	margin:10px;
 	float:left;
 }
-.right div:nth-child(even){
+.right .song:nth-child(even){
 	background:#FFF5EE;
 }
-.right div:nth-child(odd){
+.right .song:nth-child(odd){
 	background:#F5FFFA;
 }
-.right div:first-child{
+.right div div:first-child{
 	font-weight:bold;
 }
 .right h1 {color:#785616;}

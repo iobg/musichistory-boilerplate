@@ -9,20 +9,30 @@
 	background:#4DD7FA; 
 	float:left;
 	width:250px;
-	height:400px;
 	margin: 10px;
 	padding-bottom:10px;}
 
 .visible 
 	{display:flex;}
+#list{
+		word-wrap:normal;
+		}
 .hidden{
 	display:none;}
+nav a:hover{color:gray;
+			font-size:larger;}
+nav a 	{
+		
+		margin-left:20%;
+		display:inline-block;}
+nav 	{position:absolute;
+		width:895px;
+		height:50px;}
 
 .right{background:#FEFAC0;
 	padding:10px;
 	border:2px solid black;
 	width:600px;
-	height:400px;
 	margin:10px;
 	float:left;
 }

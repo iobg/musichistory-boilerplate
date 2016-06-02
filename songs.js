@@ -1,26 +1,55 @@
-var songs = [];
+var songs;
+var myRequest = new XMLHttpRequest();
+myRequest.addEventListener("load", writeSongs);
+myRequest.open("GET", "songs.json");
+myRequest.send();
+var counter=0;
+function writeSongs(){
 
-songs[songs.length] = "Nevereverland > by nano on the album Nanoir";
-songs[songs.length] = "Legs > by Z*ZTop on the album Eliminator";
-songs[songs.length] = "The Logical Song > by Supertr@amp on the album Breakfast in America";
-songs[songs.length] = "Another Brick in the Wall > by Pink Floyd on the album The Wall";
-songs[songs.length] = "Welco(me to the Jungle > by Guns & Roses on the album Appetite for Destruction";
-songs[songs.length] = "Ironi!c > by Alanis Moris*ette on the album Jagged Little Pill";
-songs[songs.length] = "Nine point eight > by mili on the album Mag Mell";
+var songFile = JSON.parse(event.target.responseText);
+if(songs === undefined){
+songs = songFile.songs;
+loadSongs();
+}
+else{
+	if(counter <1){
+	console.log(songFile);
+	songFile.songs.forEach(function(song){
+		songs[songs.length]=song;
+
+	});
+	loadSongs();
+	counter++;
+}
+}
+}
+
+
+
+function moreSongs(){
+	myRequest.open("GET", "songs2.json");
+	myRequest.send();
+}
+
+
 
 function loadSongs(){
 var songList = document.getElementById('right');
+var songDOM="";
 songList.innerHTML="";
 songs.forEach(function(song){
-song = song.replace(">", "-");
-song = song.replace("*", "");
-song = song.replace("@", "");
-song = song.replace("(", "");
-song = song.replace("!", "");
-songList.innerHTML += "<div class='song'>"+song+"</div>";
+songDOM += "<div class='song'>";
+songDOM += "<div class='title'>"+ song.title +"</div>";
+songDOM += "<div class='artist'>"+ song.artist + "</div>";
+songDOM += "<div class='album'>"+song.album +"</div>";
+songDOM += "</div>";
 });
+songDOM += "<input type='button' id='more' value='more songs!'>";
+songList.innerHTML=songDOM;
+var moreButton= document.getElementById("more");
+moreButton.addEventListener("click", moreSongs);
 }
-loadSongs();
+
 
 var listButton = document.getElementById("listview");
 var addButton = document.getElementById("addview");
@@ -50,6 +79,6 @@ addSongBtn.addEventListener("click", function(){
 	var songName = document.getElementById("song");
 	var artistName = document.getElementById("artist");
 	var albumName = document.getElementById("album");
-	songs[songs.length] = songName.value + "- by " + artistName.value + " on the album " + albumName.value;
+	songs[songs.length] = {title: songName.value, artist: artistName.value, album: albumName.value};
 	loadSongs();
 });

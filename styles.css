@@ -36,13 +36,13 @@ nav 	{position:absolute;
 	margin:10px;
 	float:left;
 }
-.right div:nth-child(even){
+.right .song:nth-child(even){
 	background:#FFF5EE;
 }
-.right div:nth-child(odd){
+.right .song:nth-child(odd){
 	background:#F5FFFA;
 }
-.right div:first-child{
+.right div div:first-child{
 	font-weight:bold;
 }
 .right h1 {color:#785616;}

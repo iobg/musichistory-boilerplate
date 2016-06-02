@@ -3,7 +3,7 @@ var myRequest = new XMLHttpRequest();
 myRequest.addEventListener("load", writeSongs);
 myRequest.open("GET", "songs.json");
 myRequest.send();
-var counter=0;
+var pressed=false;
 function writeSongs(){
 
 var songFile = JSON.parse(event.target.responseText);
@@ -12,14 +12,13 @@ songs = songFile.songs;
 loadSongs();
 }
 else{
-	if(counter <1){
-	console.log(songFile);
+	if(pressed ===false){
 	songFile.songs.forEach(function(song){
 		songs[songs.length]=song;
 
 	});
 	loadSongs();
-	counter++;
+	pressed =true;
 }
 }
 }
@@ -44,13 +43,14 @@ songDOM += "<div class='artist'>"+ song.artist + "</div>";
 songDOM += "<div class='album'>"+song.album +"</div>";
 songDOM += "</div>";
 });
+
 songDOM += "<input type='button' id='more' value='more songs!'>";
 songList.innerHTML=songDOM;
 var moreButton= document.getElementById("more");
 moreButton.addEventListener("click", moreSongs);
 }
 
-
+var buttonListeners =function(){
 var listButton = document.getElementById("listview");
 var addButton = document.getElementById("addview");
 var listView=document.getElementById("list");
@@ -73,6 +73,9 @@ listButton.addEventListener("click",function(){
 	listView.classList.remove("hidden");
 	listView.classList.add("visible");
 });
+}();
+
+
 
 var addSongBtn = document.getElementById("addbutton");
 addSongBtn.addEventListener("click", function(){

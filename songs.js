@@ -12,14 +12,14 @@ songs = songFile.songs;
 loadSongs();
 }
 else{
-	if(pressed ===false){
+	// if(pressed ===false){÷
 	songFile.songs.forEach(function(song){
 		songs[songs.length]=song;
 
 	});
 	loadSongs();
 	pressed =true;
-}
+
 }
 }
 
@@ -41,11 +41,29 @@ songDOM += "<div class='song'>";
 songDOM += "<div class='title'>"+ song.title +"</div>";
 songDOM += "<div class='artist'>"+ song.artist + "</div>";
 songDOM += "<div class='album'>"+song.album +"</div>";
+songDOM += "<input type='button' class='deletebtn' value='delete'>";
 songDOM += "</div>";
 });
 
+
+
 songDOM += "<input type='button' id='more' value='more songs!'>";
 songList.innerHTML=songDOM;
+var allsongs = document.getElementsByClassName("song");
+console.log(allsongs.length);
+for(i=0;i<allsongs.length;i++){
+	console.log(" ");
+	allsongs[i].addEventListener("click", function(){
+		if(event.target.value=="delete"){
+			
+			event.currentTarget.innerHTML="";
+		}
+		
+		
+		console.log(event.target);
+	});
+
+}
 var moreButton= document.getElementById("more");
 moreButton.addEventListener("click", moreSongs);
 }
@@ -63,7 +81,9 @@ addButton.addEventListener("click",function(){
 	addView.classList.add("visible");
 	addView.classList.remove("hidden");
 	
-	
+function deleteSong(){
+	console.log(event);
+}
 
 
 });

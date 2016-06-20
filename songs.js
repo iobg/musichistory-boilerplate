@@ -1,41 +1,31 @@
-var songs;
-var myRequest = new XMLHttpRequest();
-myRequest.addEventListener("load", writeSongs);
-myRequest.open("GET", "songs.json");
-myRequest.send();
-var pressed=false;
-function writeSongs(){
+var songs=[];
+var disabled="";
+$.ajax({
+	url : "songs.json",
+	success: writeSongs
+});
+function moreSongs(){
+	disabled="disabled";
 
-var songFile = JSON.parse(event.target.responseText);
-if(songs === undefined){
-songs = songFile.songs;
-loadSongs();
+	$.ajax({
+	url: "songs2.json",
+	success: writeSongs
+	});
 }
-else{
-	// if(pressed ===false){÷
+
+
+function writeSongs(songFile){
 	songFile.songs.forEach(function(song){
 		songs[songs.length]=song;
-
 	});
 	loadSongs();
-	pressed =true;
-
 }
-}
-
-
-
-function moreSongs(){
-	myRequest.open("GET", "songs2.json");
-	myRequest.send();
-}
-
-
-
+		
+	
 function loadSongs(){
-var songList = document.getElementById('right');
+var songList =$('#right');
+songList.html("");
 var songDOM="";
-songList.innerHTML="";
 songs.forEach(function(song){
 songDOM += "<div class='song'>";
 songDOM += "<div class='title'>"+ song.title +"</div>";
@@ -45,63 +35,48 @@ songDOM += "<input type='button' class='deletebtn' value='delete'>";
 songDOM += "</div>";
 });
 
+songDOM += `<input type='button' id='more' value='more songs!'${disabled}>`;
+songList.html(songDOM);
 
+$(".deletebtn").click(function(){
+	$(this).parent().remove();
 
-songDOM += "<input type='button' id='more' value='more songs!'>";
-songList.innerHTML=songDOM;
-var allsongs = document.getElementsByClassName("song");
-console.log(allsongs.length);
-for(i=0;i<allsongs.length;i++){
-	console.log(" ");
-	allsongs[i].addEventListener("click", function(){
-		if(event.target.value=="delete"){
-			
-			event.currentTarget.innerHTML="";
-		}
-		
-		
-		console.log(event.target);
 	});
 
+var moreButton=$("#more");
+moreButton.click(moreSongs);
+
 }
-var moreButton= document.getElementById("more");
-moreButton.addEventListener("click", moreSongs);
-}
-
-var buttonListeners =function(){
-var listButton = document.getElementById("listview");
-var addButton = document.getElementById("addview");
-var listView=document.getElementById("list");
-var addView=document.getElementById("add");
+(()=>{
+var listButton = $("#listview");
+var addButton = $("#addview");
+var listView=$("#list");
+var addView=$("#add");
 
 
-addButton.addEventListener("click",function(){
-	listView.classList.add("hidden");
-	listView.classList.remove("visible");
-	addView.classList.add("visible");
-	addView.classList.remove("hidden");
+addButton.click(function(){
+	listView.addClass("hidden");
+	listView.removeClass("visible");
+	addView.addClass("visible");
+	addView.removeClass("hidden");
 	
-function deleteSong(){
-	console.log(event);
-}
 
 
 });
-listButton.addEventListener("click",function(){
-	addView.classList.add("hidden");
-	addView.classList.remove("visible");
-	listView.classList.remove("hidden");
-	listView.classList.add("visible");
+listButton.click(function(){
+	addView.addClass("hidden");
+	addView.removeClass("visible");
+	listView.removeClass("hidden");
+	listView.addClass("visible");
 });
-}();
+})();
 
 
-
-var addSongBtn = document.getElementById("addbutton");
-addSongBtn.addEventListener("click", function(){
-	var songName = document.getElementById("song");
-	var artistName = document.getElementById("artist");
-	var albumName = document.getElementById("album");
-	songs[songs.length] = {title: songName.value, artist: artistName.value, album: albumName.value};
-	loadSongs();
+var addSongBtn = $("#addbutton");
+	addSongBtn.click(()=>{
+		var songName = $("#song");
+		var artistName = $("#artist");
+		var albumName = $("#album");
+		songs[songs.length] = {title: songName[0].value, artist: artistName[0].value, album: albumName[0].value};
+		loadSongs();
 });

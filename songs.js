@@ -1,3 +1,4 @@
+"use strict";
 var songs=[];
 var disabled="";
 $.ajax({

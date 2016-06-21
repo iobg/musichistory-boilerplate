@@ -1,3 +1,4 @@
+"use strict";
 var songs=[];
 var disabled="";
 $.ajax({
@@ -55,19 +56,16 @@ var addView=$("#add");
 
 
 addButton.click(function(){
-	listView.addClass("hidden");
-	listView.removeClass("visible");
-	addView.addClass("visible");
-	addView.removeClass("hidden");
+	listView.show();
+	addView.hide();
 	
 
 
 });
 listButton.click(function(){
-	addView.addClass("hidden");
-	addView.removeClass("visible");
-	listView.removeClass("hidden");
-	listView.addClass("visible");
+	addView.show();
+	listView.hide();
+	
 });
 })();
 

@@ -19,14 +19,12 @@
 		<p>Song Length:</p>
 		<input type="range" min="0" max="100" value="50" class="range">
 		<p>Artist:</p>
-		<select>
-			<option>Options</option>
-			<option>More Options</option>
+		<select id="Artists">
+			<option selected="selected" disabled="disabled">Artists</option>
 		</select>
 		<p>Album:</p>
-		<select>
-			<option>Options</option>
-			<option>More Options</option>
+		<select id="Albums">
+			<option selected="selected" disabled="disabled">Albums</option>
 		</select>
 		<p>Genre:</p>
 		<div class="buttons">
@@ -67,7 +65,7 @@
 
  
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="songs.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="dist/bundle.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 
 </html>

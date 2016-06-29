@@ -57,7 +57,7 @@ albumSelect.change(filterAlbum);
 	function filterArtist(){
 		albumSelect.get(0).selectedIndex=0;
 		for(var i=0;i<artists.length;i++){
-			if(artists[i].innerText===this.value){
+			if(artists[i].innerText===event.target.value){
 				$(artists[i]).parent().show();
 			}
 			else{
@@ -71,7 +71,7 @@ albumSelect.change(filterAlbum);
 	function filterAlbum(){
 		artistSelect.get(0).selectedIndex=0;
 		for(var i=0;i<albums.length;i++){
-			if(albums[i].innerText===this.value){
+			if(albums[i].innerText===event.target.value){
 				$(albums[i]).parent().show();
 			}
 			else{

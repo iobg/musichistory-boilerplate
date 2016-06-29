@@ -1,5 +1,5 @@
 "use strict";
-
+var filtering=require("./filtering");
 	var songs=[];
 	var disabled="";
 	$.ajax({
@@ -27,7 +27,7 @@
 	var albumSelect=$("#Albums");
 	var songList =$('#right');
 	var artists="<option selected='selected' disabled='disabled'>Artists</option>";
-	var albums="<option selected='selected' disabled='disabled'>Artists</option>";
+	var albums="<option selected='selected' disabled='disabled'>Albums</option>";
 	songList.html("");
 	var songDOM="";
 	songs.forEach(function(song){
@@ -37,8 +37,8 @@
 	songDOM += "<div class='album'>"+song.album +"</div>";
 	songDOM += "<input type='button' class='deletebtn' value='delete'>";
 	songDOM += "</div>";
-	artists+=`<option value=${song.artist}>${song.artist}</option>`;
-	albums+=`<option value=${song.album}>${song.album}</option>`;
+	artists+=`<option value="${song.artist}">${song.artist}</option>`;
+	albums+=`<option value="${song.album}">${song.album}</option>`;
 	});
 	artistSelect.html(artists);
 	albumSelect.html(albums);
@@ -52,6 +52,7 @@
 
 	var moreButton=$("#more");
 	moreButton.click(moreSongs);
+	filtering();
 
 	}
 

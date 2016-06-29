@@ -1,25 +1,22 @@
 "use strict";
 var loaded=require("./loading");
 function displayBtns(){
-(()=>{
+
 var listButton = $("#listview");
 var addButton = $("#addview");
 var listView=$("#list");
 var addView=$("#add");
 
 addButton.click(()=>{
-	listView.show();
-	addView.hide();
+	listView.hide();
+	addView.show();
 	
-
-
 });
 listButton.click(()=>{
-	addView.show();
-	listView.hide();
+	addView.hide();
+	listView.show();
 	
 });
-})();
 
 
 var addSongBtn = $("#addbutton");

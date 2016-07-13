@@ -15,6 +15,7 @@ var listButton = $("#listview");
 var addButton = $("#addview");
 var listView=$("#list");
 var addView=$("#add");
+addView.hide();
 
 addButton.click(()=>{
 	listView.hide();

@@ -4,18 +4,19 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
 
 <body>
 
-	<div class="top">
-		<nav><a id="addview">Add Music</a>  <a id="listview">List Music</a></nav> 
+	<div class="top row">
+		<nav><a id="addview" class="col-md-6">Add Music</a>  <a id="listview" class="col-md-6">List Music</a></nav> 
 
 	</div>
-	<div id ="list" class="visible">
-	<div class="left">
+	<div id ="list" class="visible row">
+	<div class="filters col-md-3">
 		<p>Song Length:</p>
 		<input type="range" min="0" max="100" value="50" class="range">
 		<p>Artist:</p>
@@ -44,20 +45,20 @@
 		<input type="button" value="Filter" class="filter">
 	</div>
 
-	<div class="right" id="right">
+	<div class="songlist col-md-9" id="right">
 		
 	
 	</div>
 	
 	</div>
 
-	<div class ="hidden" id="add">
+	<div id="add">
 	<div class="addForm">
 	<ul>
-	<li>Song name:<input type="text" id="song" placeholder="Song name"></li>
-	<li>Artist name:<input type="text" id="artist" placeholder="Artist"></li>
-	<li>Album name:<input type="text" id="album" placeholder="Album"></li>
-	<li><input type="button" value="Add" id="addbutton"></li>
+		<li>Song name:<input type="text" id="song" placeholder="Song name"></li>
+		<li>Artist name:<input type="text" id="artist" placeholder="Artist"></li>
+		<li>Album name:<input type="text" id="album" placeholder="Album"></li>
+		<li><input type="button" value="Add" id="addbutton"></li>
 	</ul>
 	</div>
 	</div>

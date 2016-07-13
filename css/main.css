@@ -1,0 +1,66 @@
+.top {
+  border: 2px solid black;
+  padding: 10px;
+  background: #FFB4B0;
+  height: 50px;
+  margin: auto; }
+
+.filters {
+  border: 2px solid black;
+  padding: 10px;
+  background: #4DD7FA;
+  margin: 10px;
+  padding-bottom: 10px; }
+  .filters select {
+    width: 90%;
+    border: 2px solid black; }
+
+.visible {
+  display: flex; }
+
+#list {
+  word-wrap: normal; }
+
+.hidden {
+  display: none; }
+
+nav {
+  height: 50px; }
+
+.songlist {
+  background: #FEFAC0;
+  padding: 10px;
+  border: 2px solid black;
+  margin: 10px; }
+  .songlist .song:nth-child(even) {
+    background: #FFF5EE; }
+  .songlist .song:nth-child(odd) {
+    background: #F5FFFA; }
+  .songlist div div:first-child {
+    font-weight: bold; }
+  .songlist h1 {
+    color: h1-color; }
+
+body {
+  margin: 10px; }
+
+.addForm {
+  margin-left: 30%; }
+  .addForm li {
+    display: block;
+    padding: 5px; }
+  .addForm li input {
+    display: inline-block; }
+
+.buttons ul {
+  list-style-type: none;
+  display: inline-block;
+  float: left; }
+
+.filter {
+  margin-left: 35%;
+  border: 2px solid black;
+  width: 30%; }
+
+.range {
+  width: 90%; }

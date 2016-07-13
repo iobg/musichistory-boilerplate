@@ -1,0 +1,85 @@
+$filters-background:#4DD7FA;
+$songlist-background:#FEFAC0;
+$odd-songs:#F5FFFA;
+$even-songs:#FFF5EE;
+$h1-color:#785616;
+
+.top {	border:2px solid black;
+		padding:10px;
+		background:#FFB4B0;
+		height: 50px;
+		margin:auto}
+
+.filters { 
+		border: 2px solid black;
+		padding:10px;
+		background:$filters-background; 
+		margin: 10px;
+		padding-bottom:10px;
+
+	select{
+		width:90%;
+		border: 2px solid black;}
+	}
+
+.visible {
+		display:flex;}
+
+#list{
+		word-wrap:normal;}
+.hidden{
+		display:none;}
+
+
+nav {
+		height:50px;
+}
+
+.songlist{
+		background:$songlist-background;
+		padding:10px;
+		border:2px solid black;
+		margin:10px;
+
+	.song:nth-child(even){
+		background:$even-songs;
+}
+
+	.song:nth-child(odd){
+		background:$odd-songs;
+}
+
+	div div:first-child{
+		font-weight:bold;
+}
+
+	h1 {
+		color:h1-color;}
+	}
+
+body{ 
+		margin:10px; }
+
+.addForm {		
+		margin-left:30%;
+	li{	
+		display:block;
+		padding:5px;}
+
+	li input{
+		display:inline-block}
+	}
+
+.buttons ul{
+		list-style-type:none;
+		display:inline-block;
+		float:left;}
+
+.filter {
+		margin-left:35%;
+		border: 2px solid black;
+		width:30%;}
+
+.range {
+		width:90%;}
+

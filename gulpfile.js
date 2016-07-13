@@ -11,6 +11,7 @@ var buffer = require('vinyl-buffer');
 var gutil = require('gulp-util');
 var sourcemaps = require('gulp-sourcemaps');
 var assign = require('lodash.assign');
+var sass = require('gulp-sass');
 // var sass = require('gulp-sass');
 
 var handleError = function(task) {
@@ -70,8 +71,14 @@ gulp.task('lint', function() {
 gulp.task('watch', function() {
   // Run the link task when any JavaScript file changes
   gulp.watch(['./src/**/*.js'], ['lint']);
+  gulp.watch('./sass/**/*.scss', ['sassify']); 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });
 
+gulp.task('sassify', function () {
+  return gulp.src('./sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+});
 // This task runs when you type `gulp` in the CLI
-gulp.task('default', ['lint', 'watch'], bundle);
+gulp.task('default', ['lint', 'watch','sassify'], bundle);
